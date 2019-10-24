@@ -100,8 +100,9 @@ public class Blackjack {
             } else {
                 Double insurance_bet = 0.0;
                 if (dealer.getCard(1).getRank() == 1) {
+                    System.out.println("The dealer is showing an ace.");
                     while(true) {
-                        System.out.println("The dealer is showing an ace. Would you like insurance? (yes/no)");
+                        System.out.println("Would you like insurance? (yes/no)");
                         String response = s.nextLine();
                         Boolean exit = false;
                         switch (response) {
