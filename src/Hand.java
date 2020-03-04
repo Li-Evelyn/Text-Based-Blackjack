@@ -32,7 +32,7 @@ public class Hand {
         } else {
             totalValue += c.getValue();
         }
-        if (totalValue > 21 && ace == true) {
+        if (totalValue > 21 && ace) {
             totalValue -= 10;
             ace = false;
         }
@@ -40,6 +40,12 @@ public class Hand {
 
     public int getTotalValue() {
         return totalValue;
+    }
+
+    public Card removeCard() {
+        Card top = this.getCard(hand.size()-1);
+        hand.remove(hand.size()-1);
+        return top;
     }
 
     public String toString() {
@@ -67,8 +73,7 @@ public class Hand {
     }
 
     public String toString (boolean b)
-    {
-        String dealer;
+    {   String dealer;
         dealer = "Dealer's Hand:\n";
         for (int i = 0; i < hand.size(); i++)
         {
